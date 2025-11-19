@@ -1,26 +1,12 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { RouterModule } from '@angular/router';
-// import { AppointmentList } from './appointment-list/appointment-list';
-// import { Navbar } from './navbar/navbar';
-// import { Hero } from './hero/hero';
-// import { Footer } from './footer/footer';
-import { Home } from './home/home';
 @Component({
   standalone: true,
   selector: 'app-root',
-  imports: [
-    RouterOutlet,
-    RouterModule,
-    // AppointmentList,
-    // Navbar,
-    // Hero,
-    // Footer,
-    // Home,
-  ],
-  template: `<nav
-      class="navbar navbar-expand-lg bg-body-tertiary p-4 sticky-top"
-    >
+  imports: [RouterOutlet, RouterModule],
+  template: `
+    <nav class="navbar navbar-expand-lg bg-body-tertiary p-4 sticky-top">
       <div class="container-fluid">
         <a class="navbar-brand font-bold" href="#">iData</a>
         <button
@@ -68,7 +54,7 @@ import { Home } from './home/home';
               </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-disabled="true">Disabled</a>
+              <a class="nav-link active" aria-disabled="true">Service</a>
             </li>
           </ul>
           <button type="button" class="btn btn-dark">Contact US</button>
@@ -86,7 +72,8 @@ import { Home } from './home/home';
         </div>
       </div>
     </nav>
-    <router-outlet></router-outlet>`,
+    <router-outlet></router-outlet>
+  `,
   styleUrl: './app.scss',
 })
 export class App {

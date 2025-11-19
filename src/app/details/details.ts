@@ -5,11 +5,10 @@ import { Component } from '@angular/core';
   imports: [],
   template: `
     <p>
-      details works!
+      details
+      works!kndvknvkekvnkenvkekneknbenbknekbnkenbknebknebnkenbnebnenbnebnekbnk
     </p>
   `,
   styleUrl: './details.scss',
 })
-export class Details {
-
-}
+export class Details {}
