@@ -8,7 +8,7 @@ import { RouterModule } from '@angular/router';
   template: `
     <nav class="navbar navbar-expand-lg bg-body-tertiary p-4 sticky-top">
       <div class="container-fluid">
-        <a class="navbar-brand font-bold" href="#">iData</a>
+        <a class="navbar-brand font-bold" routerLink="/">iData</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -23,10 +23,15 @@ import { RouterModule } from '@angular/router';
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link active" aria-current="page" routerLink="/"
+                >Home</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#"
+              <a
+                class="nav-link active"
+                aria-current="page"
+                routerLink="/products"
                 >Products</a
               >
             </li>
@@ -54,10 +59,12 @@ import { RouterModule } from '@angular/router';
               </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-disabled="true">Service</a>
+              <a class="nav-link active" routerLink="/services">Service</a>
             </li>
           </ul>
-          <button type="button" class="btn btn-dark">Contact US</button>
+          <a routerLink="/contact" type="button" class="btn btn-dark"
+            >Contact US</a
+          >
 
           <!-- <form class="d-flex" role="search"> -->
           <!-- <input -->
