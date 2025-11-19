@@ -1,0 +1,39 @@
+/* hero.css */
+.hero-section {
+  //URL to be added later
+  /* background-image: url("path/to/your/hero-image.jpg"); */
+  background-size: cover;
+  background-position: center;
+  height: 400px; /* Adjust as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+.hero-content {
+  padding: 20px;
+}
+
+h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
+  color: black;
+}
+
+p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  color: black;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+}
