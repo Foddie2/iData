@@ -1,10 +1,11 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { RouterModule } from '@angular/router';
+import { Footer } from './footer/footer';
 @Component({
   standalone: true,
   selector: 'app-root',
-  imports: [RouterOutlet, RouterModule],
+  imports: [RouterOutlet, RouterModule, Footer],
   template: `
     <nav class="navbar navbar-expand-lg bg-body-tertiary p-4 sticky-top">
       <div class="container-fluid">
@@ -14,7 +15,7 @@ import { RouterModule } from '@angular/router';
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
+          aria-controls="n.avbarSupportedContent"
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
@@ -23,7 +24,10 @@ import { RouterModule } from '@angular/router';
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" routerLink="/"
+              <a
+                class="nav-link active text-bold"
+                aria-current="page"
+                routerLink="/"
                 >Home</a
               >
             </li>
@@ -32,7 +36,7 @@ import { RouterModule } from '@angular/router';
                 class="nav-link active"
                 aria-current="page"
                 routerLink="/products"
-                >Products</a
+                >Blog</a
               >
             </li>
             <li class="nav-item dropdown">
@@ -43,16 +47,16 @@ import { RouterModule } from '@angular/router';
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                Dropdown
+                Products
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action </a></li>
+                <li><a class="dropdown-item" href="#">Barcode Scanners</a></li>
+                <li><a class="dropdown-item" href="#">Barcode Devices</a></li>
                 <li>
-                  <a class="dropdown-item" href="#">Another type action </a>
+                  <a class="dropdown-item" href="#">Barcode Printers</a>
                 </li>
 
-                <!-- <li><hr class="dropdown-divider" /></li> -->
+                <li><hr class="dropdown-divider" /></li>
                 <li>
                   <a class="dropdown-item" href="#">Something else here</a>
                 </li>
@@ -79,7 +83,9 @@ import { RouterModule } from '@angular/router';
         </div>
       </div>
     </nav>
+
     <router-outlet></router-outlet>
+    <app-footer></app-footer>
   `,
   styleUrl: './app.scss',
 })

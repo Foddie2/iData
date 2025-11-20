@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { HeroComponent } from '../hero/hero';
-import { Footer } from '../footer/footer';
 
 @Component({
   selector: 'app-home',
@@ -9,12 +8,11 @@ import { Footer } from '../footer/footer';
     <section>
       <form>
         <input type="text" placeholder="Filter by city" />
-        <button class="bg-stone" type="button">Search</button>
+        <button class="primary" type="button">Search</button>
       </form>
     </section>
-    <app-footer></app-footer>
   `,
   styleUrls: ['./home.scss'],
-  imports: [HeroComponent, Footer],
+  imports: [HeroComponent],
 })
 export class Home {}
