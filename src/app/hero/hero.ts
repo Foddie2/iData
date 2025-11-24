@@ -6,9 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./hero.scss'],
 })
 export class HeroComponent {
-  heroHeadline = 'Welcome to Our Amazing App!';
+  heroHeadline = 'Welcome to Our Innovative Platform';
   heroSubtext =
-    'Discover a world of possibilities with our innovative solutions.';
+    'Discover a world of possibilities with our innovative solutions where technology is our heart.';
   ctaText = 'Get Started Now';
 
   onCtaClick(): void {
