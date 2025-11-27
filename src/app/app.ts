@@ -8,21 +8,24 @@ import { Footer } from './footer/footer';
   imports: [RouterOutlet, RouterModule, Footer],
   template: `
     <nav class="navbar navbar-expand-lg bg-body-tertiary p-4 sticky-top">
-      <div class="container-fluid">
-        <a class="navbar-brand font-bold" routerLink="/">iData</a>
+      <div class="container-fluid ">
+        <a class="navbar-brand font-weight-bold" routerLink="/">iData</a>
         <button
           class="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarSupportedContent"
-          aria-controls="n.avbarSupportedContent"
+          aria-controls="navbarSupportedContent"
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarSupportedContent"
+        >
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-uppercase">
             <li class="nav-item">
               <a
                 class="nav-link active text-bold"
@@ -56,7 +59,7 @@ import { Footer } from './footer/footer';
                   <a class="dropdown-item" href="#">Barcode Printers</a>
                 </li>
 
-                <li><hr class="dropdown-divider" /></li>
+                <!-- <li><hr class="dropdown-divider" /></li> -->
                 <li>
                   <a class="dropdown-item" href="#">Something else here</a>
                 </li>
@@ -66,9 +69,9 @@ import { Footer } from './footer/footer';
               <a class="nav-link active" routerLink="/services">Service</a>
             </li>
           </ul>
-          <a routerLink="/contact" type="button" class="btn btn-dark"
-            >Contact US</a
-          >
+          <a routerLink="/contact" type="button" class="btn btn-dark">
+            Contact US
+          </a>
 
           <!-- <form class="d-flex" role="search"> -->
           <!-- <input -->
