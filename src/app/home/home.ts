@@ -11,15 +11,14 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule, HeroComponent, HousingLocationComponent],
   template: `
     <app-hero></app-hero>
-    <section>
+    <section class="text-2xl my-5 p-4 font-bold underline ">
       <form>
         <input type="text" placeholder="Filter by city" />
         <button class="primary" type="button">Search</button>
       </form>
     </section>
 
-    <section class="text-2xl my-5 p-4 font-bold underline results">
-      Hello world this is results child component page!
+    <section class="results">
       <app-housing-location
         *ngFor="let housingLocation of housingLocationList"
         [housingLocation]="housingLocation"
@@ -35,7 +34,7 @@ export class Home {
       name: 'Acme Fresh Start Housing',
       city: 'Chicago',
       state: 'IL',
-      photo: '/assets/images/J7_wired_front&rear view.png',
+      photo: '/assets/images/J7_wired_angle vi',
       availableUnits: 4,
       wifi: true,
       laundry: true,
