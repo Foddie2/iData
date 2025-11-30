@@ -1,8 +1,9 @@
 import { HousingLocation } from '../housing-location';
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { HeroComponent } from '../hero/hero';
 import { HousingLocationComponent } from '../housing-location/housing-location';
 import { CommonModule } from '@angular/common';
+import { Housing } from '../housing';
 
 @Component({
   selector: 'app-home',
@@ -27,6 +28,11 @@ import { CommonModule } from '@angular/common';
     </section>
   `,
 })
-export class Home {
+export class Home implements OnInit {
   housingLocationList: HousingLocation[] = [];
+  housingService: Housing = inject(Housing);
+
+  ngOnInit() {
+    this.housingLocationList = this.housingService.getAllHousingLocations();
+  }
 }

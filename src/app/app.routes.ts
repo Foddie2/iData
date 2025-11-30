@@ -12,6 +12,7 @@ export const routeConfig: Routes = [
     component: Home,
     title: 'Home Page',
   },
+  // Dynamic Route with parameter
   {
     path: 'details/:id',
     component: Details,
