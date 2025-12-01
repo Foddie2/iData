@@ -12,14 +12,14 @@ import { Housing } from '../housing';
   imports: [CommonModule, HeroComponent, HousingLocationComponent],
   template: `
     <app-hero></app-hero>
-    <section class="text-2xl my-5 p-4 font-bold underline ">
+    <section class=" my-3 p-4">
       <form>
         <input type="text" placeholder="Filter by city" />
         <button class="primary" type="button">Search</button>
       </form>
     </section>
 
-    <section class="results">
+    <section class="results  my-3 p-4">
       <app-housing-location
         *ngFor="let housingLocation of housingLocationList"
         [housingLocation]="housingLocation"

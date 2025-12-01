@@ -9,7 +9,7 @@ import { HousingLocationComponent } from '../housing-location/housing-location';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <article>
+    <article class="my-3 p-4">
       <img class="listing-photo" [src]="housingLocation?.photo" />
       <section class="listing-description ">
         <h2 class="listing-heading">{{ housingLocation?.name }}</h2>
@@ -37,7 +37,6 @@ import { HousingLocationComponent } from '../housing-location/housing-location';
       <section>
         <h2 class="section-heading">Apply now to live here</h2>
         <button class="primary" type="button">Apply now</button>
-        <a routerLink="/">Back to home</a>
       </section>
     </article>
   `,
