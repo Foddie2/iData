@@ -9,9 +9,9 @@ import { Component } from '@angular/core';
     </h1>
 
     <img
-      src="assets/images/J15_Front.png"
-      width="400"
-      height="200"
+      src="/assets/images/J15_Front.png"
+      width="100"
+      height="100"
       priority
       fill
     />
@@ -25,7 +25,7 @@ import { Component } from '@angular/core';
     />
 
     <img
-      ngSrc="srcassetsimagesJ15_Side_Holder2.png"
+      ngSrc="/assets/images/J15_Front.png"
       alt="Angular logo"
       width="100"
       height="100"

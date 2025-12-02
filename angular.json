@@ -24,6 +24,8 @@
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
             ],
             "assets": [
+              "src/assets",
+              "src/public",
               {
                 "glob": "**/*",
                 "input": "public"

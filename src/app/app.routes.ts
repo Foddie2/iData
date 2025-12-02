@@ -10,28 +10,28 @@ export const routeConfig: Routes = [
   {
     path: '',
     component: Home,
-    title: 'Home Page',
+    title: 'Home',
   },
   // Dynamic Route with parameter
   {
     path: 'details/:id',
     component: Details,
-    title: 'Details Page',
+    title: 'Products',
   },
   {
     path: 'products',
     component: Products,
-    title: 'Products Page',
+    title: 'Blog',
   },
   {
     path: 'services',
     component: Services,
-    title: 'Service Page',
+    title: 'Services',
   },
   {
     path: 'contact',
     component: Contact,
-    title: 'Contact Page',
+    title: 'Contact Us',
   },
 
   {
