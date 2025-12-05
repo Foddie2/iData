@@ -1,0 +1,28 @@
+{
+  "locations": [
+    {
+      "id": 1,
+      "name": "Sunny Apartments",
+      "city": "San Diego",
+      "state": "CA",
+      "photo": "/assets/sunny-apartments.jpg",
+      "availableUnits": 5,
+      "wifi": true,
+      "laundry": true,
+      "pets": false,
+      "price": 2500
+    },
+    {
+      "id": 2,
+      "name": "Cozy Condos",
+      "city": "Austin",
+      "state": "TX",
+      "photo": "/assets/cozy-condos.jpg",
+      "availableUnits": 2,
+      "wifi": true,
+      "laundry": false,
+      "pets": true,
+      "price": 1800
+    }
+  ]
+}

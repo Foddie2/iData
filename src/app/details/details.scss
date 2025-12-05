@@ -1,9 +1,9 @@
 /* src/app/details/details.component.css */
 
 .listing-photo {
-  height: 600px;
+  height: 400px;
   width: 50%;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 30px;
   float: right;
 }
