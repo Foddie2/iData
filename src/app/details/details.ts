@@ -1,5 +1,5 @@
 import { HousingLocation } from './../housing-location';
-import { CommonModule } from '@angular/common';
+
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ReactiveFormsModule, FormGroup, FormControl } from '@angular/forms';
@@ -8,7 +8,7 @@ import { HousingLocationComponent } from '../housing-location/housing-location';
 @Component({
   selector: 'app-details',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [ReactiveFormsModule],
   template: `
     <article class="my-3 p-4">
       <img class="listing-photo" [src]="housingLocation?.photo" />

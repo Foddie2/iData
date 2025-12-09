@@ -1,11 +1,11 @@
 import { Component, Input } from '@angular/core';
 import { HousingLocation } from '../housing-location';
-import { CommonModule } from '@angular/common';
+
 import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-housing-location',
-  imports: [CommonModule, RouterModule],
+  imports: [RouterModule],
   standalone: true,
   template: `
     <section class="text-2xl my-5 p-4 listing">
