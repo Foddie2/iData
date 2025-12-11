@@ -109,6 +109,7 @@ export class Housing {
       laundry: true,
     },
   ];
+
   constructor() {}
 
   getAllHousingLocations(): HousingLocation[] {

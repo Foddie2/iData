@@ -74,6 +74,11 @@ export class Details {
     const housingLocationId = Number(this.route.snapshot.params['id']);
     this.housingLocation =
       this.housing.getHousingLocationById(housingLocationId);
+
+    //Additional Reactive Forms code
+    /*   this.applyForm.valueChanges.subscribe((value) => {
+        console.log('Form Value Changed:', value);
+      },); */
   }
 
   submitApplication() {

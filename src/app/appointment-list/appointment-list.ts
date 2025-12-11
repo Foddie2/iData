@@ -8,10 +8,10 @@ import { Appointment } from '../models/appointment';
   styleUrl: './appointment-list.scss',
 })
 export class AppointmentList {
-  appointments: Appointment = {
-    id: 1,
-    title: 'Doctor Appointment',
-    date: new Date('2024-07-01T10:00:00'),
-    description: 'Annual check-up with Dr. Smith',
-  };
+  // Properties for new appointment inputs
+  newAppointmentTitle: string = '';
+  newAppointmentDate: string = '';
+  newAppointmentDescription: string = '';
+
+  appointments: Appointment[] = [];
 }

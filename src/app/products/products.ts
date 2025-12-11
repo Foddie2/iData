@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
+import { AppointmentList } from '../appointment-list/appointment-list';
 
 @Component({
   selector: 'app-products',
-  imports: [],
+  imports: [AppointmentList],
   template: `
     <h1 class="text-3xl my-5 p-4 font-bold underline">
       Hello world this is products page!
     </h1>
+
+    <app-appointment-list></app-appointment-list>
 
     <img
       src="/assets/images/J15_Front.png"

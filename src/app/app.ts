@@ -7,7 +7,7 @@ import { Footer } from './footer/footer';
   selector: 'app-root',
   imports: [RouterOutlet, RouterModule, Footer],
   template: `
-    <nav class="navbar navbar-expand-lg bg-body-tertiary p-4 sticky-top">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary p-4 sticky-top fixed">
       <div class="container-fluid ">
         <a class="navbar-brand font-weight-bold" routerLink="/">iData</a>
         <button
