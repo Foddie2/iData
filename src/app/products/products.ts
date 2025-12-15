@@ -1,39 +1,37 @@
-import { Component } from '@angular/core';
-import { AppointmentList } from '../appointment-list/appointment-list';
+import { HousingLocation } from '../housing-location';
+import { Component, inject, OnInit } from '@angular/core';
+import { HeroComponent } from '../hero/hero';
+import { HousingLocationComponent } from '../housing-location/housing-location';
+
+import { Housing } from '../housing';
 
 @Component({
-  selector: 'app-products',
-  imports: [AppointmentList],
+  selector: 'app-home',
+  styleUrls: ['./products.scss'],
+  standalone: true,
+  imports: [HeroComponent, HousingLocationComponent],
   template: `
-    <h1 class="text-3xl my-5 p-4 font-bold underline">
-      Hello world this is products page!
-    </h1>
+    <app-hero></app-hero>
+    <section class=" my-3 p-4">
+      <form>
+        <input type="text" placeholder="Filter by city" />
+        <button class="primary" type="button">Search</button>
+      </form>
+    </section>
 
-    <app-appointment-list></app-appointment-list>
-
-    <img
-      src="/assets/images/J15_Front.png"
-      width="100"
-      height="100"
-      priority
-      fill
-    />
-
-    <img
-      ngSrc="assets/images/J15_Front.png"
-      width="400"
-      height="200"
-      priority
-      fill
-    />
-
-    <img
-      ngSrc="/assets/images/J15_Front.png"
-      alt="Angular logo"
-      width="100"
-      height="100"
-    />
+    <section class="results  my-3 p-4">
+      @for (housingLocation of housingLocationList; track housingLocation) {
+      <app-housing-location [housingLocation]="housingLocation">
+      </app-housing-location>
+      }
+    </section>
   `,
-  styleUrl: './products.scss',
 })
-export class Products {}
+export class Products implements OnInit {
+  housingLocationList: HousingLocation[] = [];
+  housingService: Housing = inject(Housing);
+
+  ngOnInit() {
+    this.housingLocationList = this.housingService.getAllHousingLocations();
+  }
+}

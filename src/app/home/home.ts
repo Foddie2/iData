@@ -9,25 +9,8 @@ import { Housing } from '../housing';
   selector: 'app-home',
   styleUrls: ['./home.scss'],
   standalone: true,
-  imports: [HeroComponent, HousingLocationComponent],
-  template: `
-    <app-hero></app-hero>
-    <section class=" my-3 p-4">
-      <form>
-        <input type="text" placeholder="Filter by city" />
-        <button class="primary" type="button">Search</button>
-      </form>
-    </section>
-    
-    <section class="results  my-3 p-4">
-      @for (housingLocation of housingLocationList; track housingLocation) {
-        <app-housing-location
-          [housingLocation]="housingLocation"
-          >
-        </app-housing-location>
-      }
-    </section>
-    `,
+  imports: [HeroComponent],
+  template: ` <app-hero></app-hero> `,
 })
 export class Home implements OnInit {
   housingLocationList: HousingLocation[] = [];

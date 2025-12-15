@@ -39,7 +39,7 @@ import { Footer } from './footer/footer';
                 class="nav-link active"
                 aria-current="page"
                 routerLink="/products"
-                >Blog</a
+                >Products</a
               >
             </li>
             <li class="nav-item dropdown">
@@ -50,7 +50,7 @@ import { Footer } from './footer/footer';
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                Products
+                Blog
               </a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="#">Barcode Scanners</a></li>
