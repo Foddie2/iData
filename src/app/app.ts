@@ -25,7 +25,9 @@ import { Footer } from './footer/footer';
           class="collapse navbar-collapse justify-content-end"
           id="navbarSupportedContent"
         >
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-uppercase">
+          <ul
+            class="navbar-nav justify-content-center mx-auto mb-2 mb-lg-0 text-uppercase"
+          >
             <li class="nav-item">
               <a
                 class="nav-link active text-bold"
