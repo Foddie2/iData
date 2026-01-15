@@ -26,7 +26,7 @@ import { Footer } from './footer/footer';
           id="navbarSupportedContent"
         >
           <ul
-            class="navbar-nav justify-content-center mx-auto mb-2 mb-lg-0 text-uppercase"
+            class="navbar-nav ml-auto justify-content-end mb-2 mb-lg-0 text-uppercase"
           >
             <li class="nav-item">
               <a
