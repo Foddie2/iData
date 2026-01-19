@@ -70,6 +70,9 @@ import { Footer } from './footer/footer';
             <li class="nav-item">
               <a class="nav-link active" routerLink="/services">Service</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link active" routerLink="/services">Service</a>
+            </li>
           </ul>
           <a routerLink="/contact" type="button" class="btn btn-dark">
             Contact US
