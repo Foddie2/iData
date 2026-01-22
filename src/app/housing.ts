@@ -118,11 +118,15 @@ export class Housing {
 
   getHousingLocationById(id: number): HousingLocation | undefined {
     return this.housingLocationList.find(
-      (housingLocation) => housingLocation.id === id
+      (housingLocation) => housingLocation.id === id,
     );
   }
 
   submitApplication(firstName: string, lastName: string, email: string): void {
-    console.log('Application submitted!');
+    console.log(firstName, lastName, email);
+    // console.log('Application submitted!');
+    alert(
+      `Application submitted!\n\nName: ${firstName} ${lastName}\nEmail: ${email}`,
+    );
   }
 }

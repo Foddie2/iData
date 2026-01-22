@@ -60,7 +60,7 @@ import { HousingLocationComponent } from '../housing-location/housing-location';
 })
 export class Details {
   route: ActivatedRoute = inject(ActivatedRoute);
-  housing = inject(Housing);
+  housingService = inject(Housing);
   housingLocation: HousingLocation | undefined;
 
   // Reactive Forms
@@ -73,7 +73,7 @@ export class Details {
   constructor() {
     const housingLocationId = Number(this.route.snapshot.params['id']);
     this.housingLocation =
-      this.housing.getHousingLocationById(housingLocationId);
+      this.housingService.getHousingLocationById(housingLocationId);
 
     //Additional Reactive Forms code
     /*   this.applyForm.valueChanges.subscribe((value) => {
@@ -82,6 +82,13 @@ export class Details {
   }
 
   submitApplication() {
+    this.housingService.submitApplication(
+      this.applyForm.value.firstName ?? '',
+      this.applyForm.value.lastName ?? '',
+      this.applyForm.value.email ?? '',
+      // this.housingLocation?.id || 0,
+    );
+
     /*  this.applyForm.value;
     alert(
       `Application submitted!\n\n${JSON.stringify(
