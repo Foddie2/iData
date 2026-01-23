@@ -7,87 +7,96 @@ import { Footer } from './footer/footer';
   selector: 'app-root',
   imports: [RouterOutlet, RouterModule, Footer],
   template: `
-    <nav class="navbar navbar-expand-lg bg-body-tertiary p-4 sticky-top fixed">
-      <div class="container-fluid ">
-        <a class="navbar-brand font-weight-bold" routerLink="/">iData</a>
+    <nav
+      class="navbar navbar-expand-lg sticky-top custom-nav"
+      [class.scrolled]="isScrolled"
+    >
+      <div class="container">
+        <a class="navbar-brand" routerLink="/">
+          <span class="brand-i">i</span>Data
+        </a>
+
         <button
-          class="navbar-toggler"
+          class="navbar-toggler border-0 shadow-none"
           type="button"
           data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
+          data-bs-target="#navContent"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div
-          class="collapse navbar-collapse justify-content-end"
-          id="navbarSupportedContent"
-        >
-          <ul
-            class="navbar-nav ml-auto justify-content-end mb-2 mb-lg-0 text-uppercase"
-          >
+
+        <div class="collapse navbar-collapse" id="navContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
             <li class="nav-item">
               <a
-                class="nav-link active text-bold"
-                aria-current="page"
+                class="nav-link"
                 routerLink="/"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"
                 >Home</a
               >
             </li>
             <li class="nav-item">
               <a
-                class="nav-link active"
-                aria-current="page"
+                class="nav-link"
                 routerLink="/products"
+                routerLinkActive="active"
                 >Products</a
               >
             </li>
-            <li class="nav-item dropdown">
+
+            <li class="nav-item dropdown custom-dropdown">
               <a
-                class="nav-link active dropdown-toggle"
+                class="nav-link dropdown-toggle"
                 href="#"
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                Blog
+                Solutions
               </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Barcode Scanners</a></li>
-                <li><a class="dropdown-item" href="#">Barcode Devices</a></li>
+              <ul class="dropdown-menu animate slideIn shadow-lg border-0">
                 <li>
-                  <a class="dropdown-item" href="#">Barcode Printers</a>
+                  <a class="dropdown-item py-2" href="#"
+                    ><i class="bi bi-qr-code-scan me-2 text-primary"></i>
+                    Barcode Scanners</a
+                  >
                 </li>
-
-                <!-- <li><hr class="dropdown-divider" /></li> -->
                 <li>
-                  <a class="dropdown-item" href="#">Something else here</a>
+                  <a class="dropdown-item py-2" href="#"
+                    ><i class="bi bi-device-ssd me-2 text-primary"></i> Barcode
+                    Devices</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item py-2" href="#"
+                    ><i class="bi bi-printer me-2 text-primary"></i> Barcode
+                    Printers</a
+                  >
+                </li>
+                <li><hr class="dropdown-divider opacity-50" /></li>
+                <li>
+                  <a class="dropdown-item py-2 fw-bold text-primary" href="#"
+                    >View All Solutions →</a
+                  >
                 </li>
               </ul>
             </li>
+
             <li class="nav-item">
-              <a class="nav-link active" routerLink="/services">Service</a>
+              <a
+                class="nav-link"
+                routerLink="/services"
+                routerLinkActive="active"
+                >Services</a
+              >
             </li>
-            <li class="nav-item">
-              <a class="nav-link active" routerLink="/services">Service</a>
+            <li class="nav-item ms-lg-4">
+              <a routerLink="/contact" class="btn contact-btn shadow-sm">
+                Contact Us
+              </a>
             </li>
           </ul>
-          <a routerLink="/contact" type="button" class="btn btn-dark">
-            Contact US
-          </a>
-
-          <!-- <form class="d-flex" role="search"> -->
-          <!-- <input -->
-          <!-- class="form-control me-2" -->
-          <!-- type="search" -->
-          <!-- placeholder="Search" -->
-          <!-- aria-label="Search" -->
-          <!-- /> -->
-          <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
-          <!-- <button type="button" class="btn btn-primary">Primary</button> -->
-          <!-- </form> -->
         </div>
       </div>
     </nav>
@@ -99,4 +108,5 @@ import { Footer } from './footer/footer';
 })
 export class App {
   protected readonly title = signal('Test App');
+  isScrolled: boolean = false;
 }

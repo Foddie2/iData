@@ -11,9 +11,8 @@ import { About } from '../about/about';
   styleUrls: ['./home.scss'],
   standalone: true,
   imports: [HeroComponent, About],
-  template: ` 
-  <app-hero></app-hero>
-  <app-about></app-about>`,
+  template: ` <app-hero></app-hero>
+    <app-about></app-about>`,
 })
 export class Home implements OnInit {
   housingLocationList: HousingLocation[] = [];
