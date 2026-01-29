@@ -91,6 +91,11 @@ import { Footer } from './footer/footer';
                 >Services</a
               >
             </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/blog" routerLinkActive="active"
+                >Blog</a
+              >
+            </li>
             <li class="nav-item ms-lg-4">
               <a routerLink="/contact" class="btn contact-btn shadow-sm">
                 Contact Us
@@ -107,6 +112,6 @@ import { Footer } from './footer/footer';
   styleUrl: './app.scss',
 })
 export class App {
-  protected readonly title = signal('Test App');
+  protected readonly title = signal('Idata');
   isScrolled: boolean = false;
 }
