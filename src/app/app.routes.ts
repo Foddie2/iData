@@ -3,7 +3,7 @@ import { Home } from './home/home';
 import { Details } from './details/details';
 import { Products } from './products/products';
 import { Services } from './services/services';
-import { Contact } from './contact/contact';
+import { ContactComponent } from './contact/contact';
 import { NotFound } from './not-found/not-found';
 
 export const routeConfig: Routes = [
@@ -30,7 +30,7 @@ export const routeConfig: Routes = [
   },
   {
     path: 'contact',
-    component: Contact,
+     component: ContactComponent,
     title: 'Contact Us',
   },
 

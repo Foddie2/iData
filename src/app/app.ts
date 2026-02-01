@@ -13,7 +13,7 @@ import { Footer } from './footer/footer';
     >
       <div class="container">
         <a class="navbar-brand" routerLink="/">
-          <span class="brand-i">i</span>Data
+          <span class="brand-i">Scan</span>Grid
         </a>
 
         <button
