@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 import { Home } from './home/home';
 import { Details } from './details/details';
 import { Products } from './products/products';
-import { Services } from './services/services';
+import { ServicesComponent } from './services/services';
 import { ContactComponent } from './contact/contact';
 import { NotFound } from './not-found/not-found';
 
@@ -25,12 +25,12 @@ export const routeConfig: Routes = [
   },
   {
     path: 'services',
-    component: Services,
+    component: ServicesComponent,
     title: 'Services',
   },
   {
     path: 'contact',
-     component: ContactComponent,
+    component: ContactComponent,
     title: 'Contact Us',
   },
 

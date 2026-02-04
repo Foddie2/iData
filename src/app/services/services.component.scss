@@ -1,0 +1,28 @@
+.service-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: #ffffff;
+
+  &:hover {
+    transform: translateY(-8px);
+    border-color: #0d6efd !important;
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.08);
+
+    .icon-bg {
+      background-color: #0d6efd !important;
+      color: #ffffff !important;
+      transform: scale(1.05);
+    }
+  }
+
+  .icon-bg {
+    transition: all 0.3s ease;
+  }
+}
+
+.fw-black {
+  font-weight: 900;
+}
+
+.tracking-widest {
+  letter-spacing: 0.15em;
+}
