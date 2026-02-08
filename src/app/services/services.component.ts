@@ -1,5 +1,6 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, computed, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router, ActivatedRoute } from '@angular/router';
 
 interface ScanGridService {
   id: number;
@@ -17,6 +18,34 @@ interface ScanGridService {
   styleUrl: './services.component.scss',
 })
 export class ServicesComponent {
+  private route = inject(ActivatedRoute);
+  private router = inject(Router);
+
+  selectedCategory = signal<string>('All');
+
+  constructor() {
+    // Sync URL to State: Listen for query parameter changes
+    this.route.queryParamMap.subscribe((params) => {
+      const cat = params.get('cat');
+      if (cat) {
+        this.selectedCategory.set(cat);
+      } else {
+        this.selectedCategory.set('All');
+      }
+    });
+  }
+
+  // Update State to URL: Navigate when filter is clicked
+  setFilter(category: string) {
+    this.router.navigate([], {
+      relativeTo: this.route,
+      queryParams: { cat: category === 'All' ? null : category },
+      queryParamsHandling: 'merge', // Preserve other params if any
+    });
+  }
+
+  // ... (filteredServices and categories computed signals remain the same)
+
   services = signal<ScanGridService[]>([
     {
       id: 1,
@@ -59,4 +88,25 @@ export class ServicesComponent {
       ],
     },
   ]);
+
+  categories = computed(() => {
+    const allCategories = new Set<string>();
+    allCategories.add('All');
+    this.services().forEach((service) => {
+      service.capabilities.forEach((cap) => {
+        allCategories.add(cap);
+      });
+    });
+    return Array.from(allCategories);
+  });
+
+  filteredServices = computed(() => {
+    const category = this.selectedCategory();
+    if (category === 'All') {
+      return this.services();
+    }
+    return this.services().filter((service) =>
+      service.capabilities.includes(category),
+    );
+  });
 }
