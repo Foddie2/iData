@@ -1,18 +1,3 @@
-<header class="bg-light border-bottom py-5">
-  <div class="container text-center py-4">
-    <h6 class="text-primary text-uppercase fw-bold tracking-widest mb-3">
-      Expert Integration
-    </h6>
-    <h1 class="display-4 fw-black text-dark mb-3">
-      ScanGrid Technical Services
-    </h1>
-    <p class="lead text-muted mx-auto" style="max-width: 700px">
-      Professional barcode infrastructure, warehousing logic, and hardware
-      configuration for enterprise-scale operations.
-    </p>
-  </div>
-</header>
-
 <section class="py-5 bg-white">
   <div class="container py-lg-5">
     <div class="row g-4">
@@ -46,6 +31,39 @@
     </div>
   </div>
 </section>
+<!-- Search Bar -->
+<header class="bg-light border-bottom py-5">
+  <div class="container text-center py-4">
+    <h1 class="display-4 fw-black text-dark mb-4">Technical Services</h1>
+
+    <div class="max-w-md mx-auto mb-4 position-relative">
+      <div class="input-group input-group-lg shadow-sm">
+        <span class="input-group-text bg-white border-end-0 text-muted">
+          <i class="bi bi-search"></i>
+        </span>
+        <input
+          type="text"
+          placeholder="Search configurations, WMS, etc..."
+          class="form-control border-start-0 ps-0 rounded-end-3"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex flex-wrap justify-content-center gap-2">
+    @for (cat of categories(); track cat) {
+      <button
+        (click)="setFilter(cat)"
+        [class.btn-primary]="selectedCategory() === cat"
+        [class.btn-outline-secondary]="selectedCategory() !== cat"
+        class="btn rounded-pill px-4 fw-bold transition-all shadow-sm"
+      >
+        {{ cat }}
+      </button>
+    }
+  </div>
+</header>
+<!-- Search Bar -->
 
 <section class="py-5 bg-dark text-white">
   <div class="container">

@@ -1,6 +1,5 @@
 import { HousingLocation } from '../housing-location';
 import { Component, inject, OnInit } from '@angular/core';
-import { HeroComponent } from '../hero/hero';
 import { HousingLocationComponent } from '../housing-location/housing-location';
 
 import { Housing } from '../housing';
@@ -9,9 +8,8 @@ import { Housing } from '../housing';
   selector: 'app-home',
   styleUrls: ['./products.scss'],
   standalone: true,
-  imports: [HeroComponent, HousingLocationComponent],
+  imports: [ HousingLocationComponent],
   template: `
-    <app-hero></app-hero>
     <section class=" my-3 p-4">
       <form>
         <input type="text" placeholder="Filter by city" />
@@ -21,8 +19,8 @@ import { Housing } from '../housing';
 
     <section class="results  my-3 p-4">
       @for (housingLocation of housingLocationList; track housingLocation) {
-      <app-housing-location [housingLocation]="housingLocation">
-      </app-housing-location>
+        <app-housing-location [housingLocation]="housingLocation">
+        </app-housing-location>
       }
     </section>
   `,

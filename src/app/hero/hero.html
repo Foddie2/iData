@@ -1,8 +1,221 @@
-<!-- hero.html -->
-<div class="hero-section">
-  <div class="hero-content">
-    <h1>{{ heroHeadline }}</h1>
-    <p>{{ heroSubtext }}</p>
-    <button (click)="onCtaClick()">{{ ctaText }}</button>
+<!-- The Modern Hero -->
+
+<section
+  class="hero-section min-vh-100 d-flex align-items-center bg-white pt-5"
+>
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6">
+        <span
+          class="badge bg-primary-subtle text-primary border border-primary-subtle px-3 py-2 rounded-pill mb-4 fw-bold tracking-widest text-uppercase"
+        >
+          Enterprise Scanning Solutions
+        </span>
+        <h1 class="display-3 fw-black text-dark mb-4 leading-tight">
+          Precision Data <span class="text-primary">Captured</span> at the Edge.
+        </h1>
+        <p class="lead text-muted mb-5 fs-4">
+          ScanGrid synchronizes high-performance hardware with enterprise
+          intelligence. Optimize your Zebra, Honeywell, and iData fleet with
+          expert configuration.
+        </p>
+        <div class="d-flex flex-wrap gap-3">
+          <a
+            routerLink="/products"
+            class="btn btn-primary btn-lg px-5 py-3 fw-bold rounded-3 shadow-lg"
+            >View Inventory</a
+          >
+          <a
+            routerLink="/services"
+            class="btn btn-outline-dark btn-lg px-5 py-3 fw-bold rounded-3"
+            >Technical Services</a
+          >
+        </div>
+      </div>
+      <div class="col-lg-6 position-relative">
+        <div class="hero-image-glow"></div>
+        <img
+          src="assets/hero-scanner-render.png"
+          alt="Industrial Scanner"
+          class="img-fluid position-relative z-1 animate-float"
+        />
+      </div>
+    </div>
   </div>
-</div>
+</section>
+
+<!-- Trusted Partners (Logo Cloud)  -->
+<section class="py-5 border-bottom border-top bg-light">
+  <div class="container">
+    <p
+      class="text-center text-muted small fw-bold text-uppercase tracking-widest mb-4"
+    >
+      Official Hardware Partners
+    </p>
+    <div
+      class="d-flex flex-wrap justify-content-center align-items-center gap-5 opacity-50 grayscale-hover"
+    >
+      @for (brand of partners(); track brand) {
+        <span class="fs-3 fw-black text-dark tracking-tighter">{{
+          brand
+        }}</span>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Core Capabilities (The Grid) -->
+<section class="py-5 bg-white">
+  <div class="container py-lg-5">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold display-6">Scanning Redefined</h2>
+      <p class="text-muted">Built for the demands of industrial warehousing.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="p-5 rounded-4 bg-light h-100 border-0 transition-hover">
+          <i class="bi bi-cpu text-primary fs-1 mb-4"></i>
+          <h4 class="fw-bold">Firmware Lockdown</h4>
+          <p class="text-muted small">
+            Standardize your fleet with specialized firmware configurations to
+            prevent downtime.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="p-5 rounded-4 bg-light h-100 border-0 transition-hover">
+          <i class="bi bi-qr-code-scan text-primary fs-1 mb-4"></i>
+          <h4 class="fw-bold">Symbology Tuning</h4>
+          <p class="text-muted small">
+            Optimized 1D/2D scanning for damaged or low-contrast labels in dark
+            environments.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="p-5 rounded-4 bg-light h-100 border-0 transition-hover">
+          <i class="bi bi-shield-check text-primary fs-1 mb-4"></i>
+          <h4 class="fw-bold">Security Staging</h4>
+          <p class="text-muted small">
+            Enterprise-grade MDM enrollment and network security for mobile
+            handhelds.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Data Visualization (The Stats) -->
+<section class="py-5 bg-dark text-white">
+  <div class="container py-lg-4">
+    <div class="row g-4 text-center">
+      @for (stat of stats(); track stat.label) {
+        <div class="col-6 col-lg-3">
+          <h2 class="display-5 fw-black text-primary mb-0">{{ stat.value }}</h2>
+          <p
+            class="small text-uppercase tracking-widest text-secondary fw-bold"
+          >
+            {{ stat.label }}
+          </p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- The "ScanGrid Logic" (Feature Highlight) -->
+<section class="py-5 bg-light overflow-hidden">
+  <div class="container py-lg-5">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6 order-2 order-lg-1">
+        <img
+          src="assets/integration-ui.png"
+          class="rounded-4 shadow-xl border border-gray-200"
+          alt="UI Integration"
+        />
+      </div>
+      <div class="col-lg-6 order-1 order-lg-2">
+        <h2 class="display-6 fw-bold mb-4">Zero-Touch Integration</h2>
+        <p class="text-muted mb-4">
+          Our proprietary ScanGrid Logic middleware bridges the gap between your
+          hardware fleet and your WMS. Deploy hundreds of devices in minutes,
+          not days.
+        </p>
+        <ul class="list-unstyled space-y-3">
+          <li class="d-flex align-items-center fw-medium">
+            <i class="bi bi-check-circle-fill text-primary me-3"></i> XML-based
+            profile pushing
+          </li>
+          <li class="d-flex align-items-center fw-medium">
+            <i class="bi bi-check-circle-fill text-primary me-3"></i> Automatic
+            Wi-Fi provisioning
+          </li>
+          <li class="d-flex align-items-center fw-medium">
+            <i class="bi bi-check-circle-fill text-primary me-3"></i> Asset
+            tracking dashboard
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials (Validation) -->
+<section class="py-5 bg-white">
+  <div class="container">
+    <div
+      class="bg-primary-subtle p-5 rounded-5 border border-primary-subtle shadow-sm"
+    >
+      <div class="row justify-content-center text-center">
+        <div class="col-lg-8">
+          <i class="bi bi-quote text-primary display-4"></i>
+          <p class="fs-4 fw-medium text-dark italic mb-4">
+            "ScanGrid transformed our throughput. Their barcode configuration
+            tuning solved issues our OEM couldn't fix."
+          </p>
+          <p class="fw-bold mb-0">Director of Operations</p>
+          <p class="small text-muted text-uppercase fw-bold">
+            Global Logistics Hub
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="py-5 bg-primary text-white">
+  <div class="container py-lg-4">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <h2 class="display-5 fw-bold mb-4">
+          Ready to Transform Your Operations?
+        </h2>
+        <p class="lead mb-4">
+          Join hundreds of enterprises leveraging ScanGrid's intelligent
+          scanning solutions.
+        </p>
+        <a href="/contact" class="btn btn-light btn-lg fw-bold"
+          >Get Started Today</a
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5 bg-white">
+  <div class="container">
+    <div class="bg-dark rounded-4 p-5 text-center shadow-xl">
+      <h2 class="text-white fw-bold mb-4">
+        Scale your scanning infrastructure today.
+      </h2>
+      <button
+        routerLink="/contact"
+        class="btn btn-primary btn-lg px-5 py-3 fw-bold rounded-3"
+      >
+        Get Started
+      </button>
+    </div>
+  </div>
+</section>

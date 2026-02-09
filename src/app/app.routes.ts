@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { Home } from './home/home';
+import { HomeComponent } from './home/home';
 import { Details } from './details/details';
 import { Products } from './products/products';
 import { ServicesComponent } from './services/services.component';
@@ -9,8 +9,8 @@ import { NotFound } from './not-found/not-found';
 export const routeConfig: Routes = [
   {
     path: '',
-    component: Home,
-    title: 'Home',
+    component: HomeComponent,
+    title: 'ScanGrid | capture Data at the Edge',
   },
   // Dynamic Route with parameter
   {

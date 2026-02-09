@@ -1,0 +1,7 @@
+<app-hero></app-hero>
+
+<section class="results">
+  @for (location of housingLocationList; track location.id) {
+    <app-housing-location [housingLocation]="location"></app-housing-location>
+  }
+</section>

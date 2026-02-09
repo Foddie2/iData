@@ -4,17 +4,15 @@ import { HeroComponent } from '../hero/hero';
 import { HousingLocationComponent } from '../housing-location/housing-location';
 
 import { Housing } from '../housing';
-import { About } from '../about/about';
 
 @Component({
   selector: 'app-home',
-  styleUrls: ['./home.scss'],
   standalone: true,
-  imports: [HeroComponent, About],
-  template: ` <app-hero></app-hero>
-    <app-about></app-about>`,
+  imports: [HeroComponent, HousingLocationComponent],
+  templateUrl: './home.component.html',
+  styleUrl: './home.component.scss',
 })
-export class Home implements OnInit {
+export class HomeComponent implements OnInit {
   housingLocationList: HousingLocation[] = [];
   housingService: Housing = inject(Housing);
 

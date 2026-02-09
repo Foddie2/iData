@@ -1,18 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, signal, afterNextRender } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-hero',
+  selector: 'app-home',
+  standalone: true,
+  imports: [CommonModule, RouterLink],
   templateUrl: './hero.html',
-  styleUrls: ['./hero.scss'],
+  styleUrl: './hero.scss',
 })
 export class HeroComponent {
-  heroHeadline = 'Welcome to Our Innovative Platform';
-  heroSubtext =
-    'Discover a world of possibilities with our innovative solutions where technology is our heart.';
-  ctaText = 'Get Started Now';
+  // Signals for business metrics
+  stats = signal([
+    { label: 'Devices Configured', value: '12k+' },
+    { label: 'Warehouse Integrations', value: '450+' },
+    { label: 'System Uptime', value: '99.9%' },
+    { label: 'Support Response', value: '<2hr' },
+  ]);
 
-  onCtaClick(): void {
-    console.log('Call to action clicked!');
-    // Implement navigation or other logic here
-  }
+  partners = signal(['Zebra', 'Honeywell', 'iData', 'Datalogic', 'Sato']);
 }
