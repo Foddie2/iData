@@ -19,4 +19,14 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.housingLocationList = this.housingService.getAllHousingLocations();
   }
+
+  showScrollButton(): boolean {
+    return typeof window !== 'undefined' && window.scrollY > 200;
+  }
+
+  scrollToTop(): void {
+    if (typeof window !== 'undefined') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
 }
