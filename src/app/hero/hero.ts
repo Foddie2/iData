@@ -1,7 +1,7 @@
 import { Component, signal, afterNextRender } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import { HousingLocationComponent } from '../housing-location/housing-location';
+// import { HousingLocationComponent } from '../housing-location/housing-location';
 
 @Component({
   selector: 'app-hero',
