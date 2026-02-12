@@ -22,7 +22,16 @@ export class HeroComponent {
     { label: 'Support Response', value: '<2hr' },
   ]);
 
-  partners = signal(['Zebra', 'Honeywell', 'iData', 'Datalogic', 'Sato']);
+  partners = signal([
+    'Zebra',
+    'Honeywell',
+    'iData',
+    'Datalogic',
+    'Printronix',
+    'Intermec',
+    'CognitiveTPG',
+    'Toshiba',
+  ]);
 }
 
 export class HomeComponent {
