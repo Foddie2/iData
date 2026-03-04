@@ -1,0 +1,70 @@
+<section class="blog-header py-5 bg-dark text-white">
+  <div class="container py-4 text-center">
+    <h1 class="display-4 fw-black">ScanGrid Insights</h1>
+    <p class="lead opacity-75">
+      Latest updates in barcode technology and warehouse automation.
+    </p>
+  </div>
+</section>
+
+<div class="container py-5">
+  <div class="d-flex justify-content-center gap-2 mb-5">
+    <button
+      (click)="selectedCategory.set('All')"
+      [class.btn-primary]="selectedCategory() === 'All'"
+      class="btn rounded-pill px-4"
+    >
+      All
+    </button>
+    <button
+      (click)="selectedCategory.set('Hardware')"
+      [class.btn-primary]="selectedCategory() === 'Hardware'"
+      class="btn btn-outline-secondary rounded-pill px-4"
+    >
+      Hardware
+    </button>
+    <button
+      (click)="selectedCategory.set('Software')"
+      [class.btn-primary]="selectedCategory() === 'Software'"
+      class="btn btn-outline-secondary rounded-pill px-4"
+    >
+      Software
+    </button>
+  </div>
+
+  <div class="row g-4">
+    @for (post of filteredPosts(); track post.id) {
+      <div class="col-md-6 col-lg-4">
+        <article
+          class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden blog-card"
+        >
+          <div class="position-relative">
+            <div
+              class="bg-gray-200 aspect-video d-flex align-items-center justify-content-center text-muted"
+            >
+              <i class="bi bi-image fs-1"></i>
+            </div>
+            <span
+              class="badge bg-primary position-absolute bottom-0 start-0 m-3"
+              >{{ post.category }}</span
+            >
+          </div>
+
+          <div class="card-body p-4">
+            <p class="small text-muted mb-2">
+              {{ post.date }} • By {{ post.author }}
+            </p>
+            <h4 class="fw-bold mb-3">{{ post.title }}</h4>
+            <p class="text-secondary small">{{ post.excerpt }}</p>
+            <a
+              [routerLink]="['/blog', post.id]"
+              class="btn btn-link text-primary p-0 fw-bold text-decoration-none"
+            >
+              Read Analysis <i class="bi bi-arrow-right ms-1"></i>
+            </a>
+          </div>
+        </article>
+      </div>
+    }
+  </div>
+</div>

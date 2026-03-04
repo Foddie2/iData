@@ -1,0 +1,71 @@
+@if (post()) {
+  <article class="py-5 bg-white min-vh-100">
+    <div class="container py-lg-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <nav class="mb-5">
+            <a
+              routerLink="/blog"
+              class="text-primary text-decoration-none fw-bold small"
+            >
+              <i class="bi bi-chevron-left"></i> Back to Insights
+            </a>
+          </nav>
+
+          <header class="mb-5">
+            <span class="badge bg-primary-subtle text-primary mb-3">{{
+              post()?.category
+            }}</span>
+            <h1 class="display-4 fw-black text-dark mb-4">
+              {{ post()?.title }}
+            </h1>
+
+            <div
+              class="d-flex align-items-center p-3 bg-light rounded-4 border"
+            >
+              <div class="flex-grow-1">
+                <p class="mb-0 fw-bold text-dark">{{ post()?.author }}</p>
+                <p class="mb-0 small text-muted">
+                  Technical Lead • {{ post()?.date }}
+                </p>
+              </div>
+              <div class="d-flex gap-2">
+                <button class="btn btn-sm btn-outline-secondary rounded-circle">
+                  <i class="bi bi-share"></i>
+                </button>
+              </div>
+            </div>
+          </header>
+
+          <div class="blog-content fs-5 text-secondary leading-relaxed">
+            <p class="mb-4">{{ post()?.content }}</p>
+
+            <div
+              class="p-4 bg-dark text-white rounded-4 my-5 border-start border-primary border-5"
+            >
+              <h5 class="fw-bold">
+                <i class="bi bi-info-circle me-2"></i> ScanGrid Pro-Tip
+              </h5>
+              <p class="mb-0 small opacity-75">
+                When configuring ZT series printers, always ensure the media
+                sensor is positioned correctly for gap/notch detection to avoid
+                waste.
+              </p>
+            </div>
+          </div>
+
+          <div class="pt-5 border-top mt-5 d-flex gap-2">
+            @for (tag of post()?.tags; track tag) {
+              <span class="badge border text-muted px-3 py-2">#{{ tag }}</span>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+} @else {
+  <div class="container py-5 text-center">
+    <h2 class="text-muted">Analyzing local database...</h2>
+    <div class="spinner-border text-primary mt-3"></div>
+  </div>
+}

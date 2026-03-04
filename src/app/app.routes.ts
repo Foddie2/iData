@@ -5,6 +5,7 @@ import { Products } from './products/products';
 import { ServicesComponent } from './services/services.component';
 import { ContactComponent } from './contact/contact';
 import { NotFound } from './not-found/not-found';
+import { BlogComponent } from './blog/blog';
 
 export const routeConfig: Routes = [
   {
@@ -28,6 +29,22 @@ export const routeConfig: Routes = [
     component: ServicesComponent,
     title: 'Services',
   },
+
+  // Static route for blog listing
+  {
+    path: 'blog',
+    component: BlogComponent,
+    title: 'ScanGrid | Insights',
+  },
+
+  // Dynamic route for blog post details
+  {
+    path: 'blog/:id',
+    loadComponent: () =>
+      import('./blog-detail/blog-detail').then((m) => m.BlogDetailComponent),
+    title: 'ScanGrid | Article Details',
+  },
+
   {
     path: 'contact',
     component: ContactComponent,
